@@ -1,5 +1,5 @@
 # inweave-replo
-# Replo Page Structure
+# High Level File Structure
 
 ## Page
 - **Hero Section**
@@ -60,7 +60,61 @@
           - Text: *Add Magic Box to Bag*
           - Price: *Variant > Price*
 
-- **Footer (optional)**
-  - Links
-  - Social
-  - Copyright
+
+
+
+---
+
+## 🛠 Approach (Step-by-Step)
+
+### 1️⃣ Hero Section
+- Full-width background image with **heading, sub-text, and CTA button**.  
+- **Unlock Offer button** is linked to the `Product Section` via an **anchor scroll interaction**.  
+- Responsive: text centered on mobile, left-aligned on desktop.  
+
+---
+
+### 2️⃣ Review Section
+- Section includes heading + **multi-slide carousel**.  
+- Carousel built with:  
+  - **Review cards** (image, rating, text, reviewer).  
+  - **Indicators (dots)** and **navigation arrows**.  
+- Responsive: multiple cards on desktop, stacked/scrollable on mobile.  
+
+---
+
+### 3️⃣ Product Section
+- Built as a **Grid Container**:  
+  - **Desktop** → 2 columns (Left = carousel, Right = details).  
+  - **Mobile** → 1 column (stacked).  
+
+#### Left Side → Thumbnail Carousel
+- Displays product images.  
+- Thumbnails switch the main image when clicked.  
+- Background = light gray for contrast.  
+
+#### Right Side → Product Details
+- Includes:  
+  - Badge (*Top Rated*)  
+  - Dynamic title + subtitle  
+  - Description text  
+  - Checklist features (✓ styled items)  
+  - Variant selection:  
+    - **Color swatches** (Red, Blue, White → changes state & updates text)  
+    - **Size boxes** (XS, SM, M, L, XL → state-driven)  
+  - Dynamic **Selected Text** → displays e.g. `Selected Blue XS`.  
+
+---
+
+### 4️⃣ Add To Cart Section
+- Custom **Quantity Selector**:  
+  - State-driven counter (– / + buttons).  
+  - Quantity text bound to `quantity` state.  
+- **Add To Cart Button**:  
+  - Text updates with product + price.  
+  - On click → adds product to cart (via Shopify Buy Box integration or AJAX).  
+- Responsive: full-width on mobile, inline layout on desktop.  
+
+---
+
+
